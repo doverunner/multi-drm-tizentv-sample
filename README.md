@@ -7,8 +7,8 @@
 This document explains how to play `PallyCon Multi-DRM` content on `Samsung Smart TV(Tizen)`.
 
 There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provide samples for you to test.
-- Playback using AVPlay API : [PallyConTizen-AVPlay](#PallyConTizen-AVPlay Sample) Sample
-- Playback using HTML5 Player (Shaka) : [PallyConTizen-HTMLShaka](#PallyConTizen-HTMLShaka Sample) Sample
+- Playback using AVPlay API : [PallyConTizen-AVPlay](#PallyConTizen-AVPlay-Sample) Sample
+- Playback using HTML5 Player (Shaka) : [PallyConTizen-HTMLShaka](#PallyConTizen-HTMLShaka-Sample) Sample
 
 
 
