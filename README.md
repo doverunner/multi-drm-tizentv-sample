@@ -1,14 +1,14 @@
-# **PallyCon Multi-DRM + Tizen TV**
+# **DoveRunner Multi-DRM + Tizen TV**
 > Multi-DRM integration sample for Samsung Tizen TV application
 
 
  ## Overview
 
-This document explains how to play `PallyCon Multi-DRM` content on `Samsung Smart TV(Tizen)`.
+This document explains how to play `DoveRunner Multi-DRM` content on `Samsung Smart TV(Tizen)`.
 
-There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provide samples for you to test.
-- Playback using AVPlay API : [PallyConTizen-AVPlay](#PallyConTizen-AVPlay-Sample) Sample
-- Playback using HTML5 Player (Shaka) : [PallyConTizen-HTMLShaka](#PallyConTizen-HTMLShaka-Sample) Sample
+There are two ways to play DoveRunner Multi-DRM content on Tizen OS, and we provide samples for you to test.
+- Playback using AVPlay API : [DoveRunnerTizen-AVPlay](#DoveRunnerTizen-AVPlay-Sample) Sample
+- Playback using HTML5 Player (Shaka) : [DoveRunnerTizen-HTMLShaka](#DoveRunnerTizen-HTMLShaka-Sample) Sample
 
 
 
@@ -34,16 +34,16 @@ There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provid
 
 
 
-## PallyConTizen-AVPlay Sample 
+## DoveRunnerTizen-AVPlay Sample 
 
 
 > The Tizen SDK provides a [PlayerAVPlayDRM](https://github.com/SamsungDForum/PlayerAVPlayDRM) sample that uses [webapis.avplay](https://developer.samsung.com/smarttv/develop/api-references/samsung-product-api-references/avplay-api.html). The `PlayerAVPlayDRM` sample implements the functions required for DRM playback, including the [webapis.avplay.setDrm()](https://developer.samsung.com/smarttv/develop/api-references/samsung-product-api-references/avplay-api.html#AVPlayManager-setDrm) function. For the `PlayerAVPlayDRM` sample, all source files are in the same path. In order to run the `PlayerAVPlayDRM` sample as a Tizen Studio project, you must edit the `index.html` file and change the paths to the `.js file` and `.css file`.
 
-> `PallyConTizen-AVPlay` Sample was implemented by referring to [Playback Using AVPlay](https://developer.samsung.com/smarttv/develop/guides/multimedia/media-playback/using-avplay.html) in `Web Application` on `Smart TV` on [Samsung developer](https://developer.samsung.com/) site.
+> `DoveRunnerTizen-AVPlay` Sample was implemented by referring to [Playback Using AVPlay](https://developer.samsung.com/smarttv/develop/guides/multimedia/media-playback/using-avplay.html) in `Web Application` on `Smart TV` on [Samsung developer](https://developer.samsung.com/) site.
 
-#### `PallyConTizen-AVPlay` is a sample modified to reflect the above content so that it can be used in Tizen Studio.
+#### `DoveRunnerTizen-AVPlay` is a sample modified to reflect the above content so that it can be used in Tizen Studio.
 
-- You can test it by changing the value of the `drms` variable in the `main.js` file included in `PallyConTizen-AVPlay` to `PallyCon Multi-DRM` information as follows.
+- You can test it by changing the value of the `drms` variable in the `main.js` file included in `DoveRunnerTizen-AVPlay` to `DoveRunner Multi-DRM` information as follows.
 
   ```javascript
   // main.js
@@ -53,13 +53,13 @@ There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provid
           name: 'PlayReady',
           url: 'https://playready-dash-content-url/stream.mpd',
           licenseServer: 'https://license-global.pallycon.com/ri/licenseManager.do',
-          customData: 'PallyCon Multi-DRM License Request Token'
+          customData: 'DoveRunner Multi-DRM License Request Token'
       },
       WIDEVINE: {
           name: 'Widevine',
           url: 'https://widevine-dash-content-url/stream.mpd',
           licenseServer: 'https://license-global.pallycon.com/ri/licenseManager.do',
-          customData: 'PallyCon Multi-DRM License Request Token'
+          customData: 'DoveRunner Multi-DRM License Request Token'
       }
   };
   ...
@@ -67,7 +67,7 @@ There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provid
 
   
 
-- Set PallyCon Multi-DRM information through the `setPlayready` and `setWidevine` functions in the `videoPlayer.js` file.
+- Set DoveRunner Multi-DRM information through the `setPlayready` and `setWidevine` functions in the `videoPlayer.js` file.
 
   - [PlayReady](https://developer.samsung.com/smarttv/develop/guides/multimedia/media-playback/using-avplay.html) 
 
@@ -166,22 +166,22 @@ There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provid
 ### More..
 
 
-  - `PallyConTizen-AVPlay` follows [LICENSE.txt](https://github.com/SamsungDForum/PlayerAVPlayDRM/blob/master/LICENSE.txt) of [PlayerAVPlayDRM sample](https://github.com/SamsungDForum/PlayerAVPlayDRM).
-  - When running PallyConTizen-AVPlay in Tizen Studio, the directory name and project name must be `PallyConTizen-AVPlay`. 
+  - `DoveRunnerTizen-AVPlay` follows [LICENSE.txt](https://github.com/SamsungDForum/PlayerAVPlayDRM/blob/master/LICENSE.txt) of [PlayerAVPlayDRM sample](https://github.com/SamsungDForum/PlayerAVPlayDRM).
+  - When running DoveRunnerTizen-AVPlay in Tizen Studio, the directory name and project name must be `DoveRunnerTizen-AVPlay`. 
     - If you use a different name, the project will not open properly. 
-    - Since the distributed compressed file name is `PallyConTizen-AVPlay`, in a normal environment, just uncompress the file without changing the file name.
+    - Since the distributed compressed file name is `DoveRunnerTizen-AVPlay`, in a normal environment, just uncompress the file without changing the file name.
 
-  - If you inevitably use a different name, you must modify the `PallyConTizen-AVPlay` value in the `.project` and `config.xml` files in PallyConTizen-AVPlay.
+  - If you inevitably use a different name, you must modify the `DoveRunnerTizen-AVPlay` value in the `.project` and `config.xml` files in DoveRunnerTizen-AVPlay.
 
 
 
-## PallyConTizen-HTMLShaka Sample
+## DoveRunnerTizen-HTMLShaka Sample
 
 > Shaka Player is an [Google open-source JavaScript library](https://github.com/shaka-project/shaka-player) for adaptive media. It plays adaptive media formats (such as [DASH](http://dashif.org/), [HLS](https://developer.apple.com/streaming/) and [MSS](https://learn.microsoft.com/en-us/iis/media/smooth-streaming/smooth-streaming-transport-protocol)) in a browser, without using plugins or Flash. Instead, Shaka Player uses the open web standards [MediaSource Extensions](https://www.w3.org/TR/media-source/) and [Encrypted Media Extensions](https://www.w3.org/TR/encrypted-media/).
 
-#### The `PallyConTizen-HTMLShaka` sample uses Shaka Player.
+#### The `DoveRunnerTizen-HTMLShaka` sample uses Shaka Player.
 
-- You can test it by changing the value of the `playerConfig` variable in the `main.js` file included in `PallyConTizen-HTMLShaka` to `PallyCon Multi-DRM` information as follows.
+- You can test it by changing the value of the `playerConfig` variable in the `main.js` file included in `DoveRunnerTizen-HTMLShaka` to `DoveRunner Multi-DRM` information as follows.
 
   ```javascript
   // main.js
@@ -189,9 +189,9 @@ There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provid
       ...
       
     	{
-          // PallyCon Multi-DRM Widevine or PlayReady Content
+          // DoveRunner Multi-DRM Widevine or PlayReady Content
           manifest: 'https://widevine-dash-content-url/stream.mpd',
-          description: 'PallyCon Contents',
+          description: 'DoveRunner Contents',
           drmServers: {
               'com.widevine.alpha': 'https://license-global.pallycon.com/ri/licenseManager.do'
               // or 'com.microsoft.playready': 'https://license-global.pallycon.com/ri/licenseManager.do'
@@ -211,13 +211,13 @@ There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provid
   
       ...
   
-      // set PallyCon Multi-DRM Token
+      // set DoveRunner Multi-DRM Token
       player.getNetworkingEngine().registerRequestFilter(function (type, request) {
           // Only add headers to license requests:
           if (type == shaka.net.NetworkingEngine.RequestType.LICENSE) {
               console.log("request :" + request.body);
-              // PallyCon License Request Token
-              request.headers['pallycon-customdata-v2'] = 'PallyCon Multi-DRM License Request Token';
+              // DoveRunner License Request Token
+              request.headers['pallycon-customdata-v2'] = 'DoveRunner Multi-DRM License Request Token';
           }
       });
   }
@@ -227,7 +227,7 @@ There are two ways to play PallyCon Multi-DRM content on Tizen OS, and we provid
 
 ## More..
 
-- `PallyConTizen-HTMLShaka` follows [LICENSE.txt](https://github.com/SamsungDForum/PlayerAVPlayDRM/blob/master/LICENSE.txt) of [SampleWebApps-PlayerHTMLShaka](https://github.com/SamsungDForum/SampleWebApps-PlayerHTMLShaka).
+- `DoveRunnerTizen-HTMLShaka` follows [LICENSE.txt](https://github.com/SamsungDForum/PlayerAVPlayDRM/blob/master/LICENSE.txt) of [SampleWebApps-PlayerHTMLShaka](https://github.com/SamsungDForum/SampleWebApps-PlayerHTMLShaka).
 
 - To use `Shaka Player` on Tizen, you need to specify in your [content security policy](https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/web-runtime#security) in your `config.xml` file.
 
