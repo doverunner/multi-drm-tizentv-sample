@@ -21,17 +21,17 @@ App.Main = (function Main() {
             }
         },
 //        {
-//            manifest: 'https://contents.pallycon.com/TEST/PACKAGED_CONTENT/TEST_SIMPLE/dash/stream.mpd',
+//            manifest: 'https://drm-contents.doverunner.com/TEST/PACKAGED_CONTENT/TEST_SIMPLE/dash/stream.mpd',
 //            description: 'PlayReady',
 //            drmServers: {
-//                'com.microsoft.playready': 'https://license-global.pallycon.com/ri/licenseManager.do'
+//                'com.microsoft.playready': 'https://drm-license.doverunner.com/ri/licenseManager.do'
 //            }
 //        },
         {
-            manifest: 'https://contents.pallycon.com/TEST/PACKAGED_CONTENT/TEST_SIMPLE/dash/stream.mpd',
+            manifest: 'https://drm-contents.doverunner.com/TEST/PACKAGED_CONTENT/TEST_SIMPLE/dash/stream.mpd',
             description: 'Widevine',
             drmServers: {
-                'com.widevine.alpha': 'https://license-global.pallycon.com/ri/licenseManager.do' 
+                'com.widevine.alpha': 'https://drm-license.doverunner.com/ri/licenseManager.do' 
             }
         }
     ];
@@ -78,16 +78,16 @@ App.Main = (function Main() {
 
         videoEl.addEventListener('ended', onEnded);
 
-        // set PallyCon Multi-DRM Token
+        // set Multi-DRM Token
         player.getNetworkingEngine().registerRequestFilter(function (type, request) {
             // Only add headers to license requests:
             if (type == shaka.net.NetworkingEngine.RequestType.LICENSE) {
                 console.log("request :" + request.body);
-                // PallyCon License Request Token - widevine
+                // License Request Token - widevine
                 request.headers['pallycon-customdata-v2'] = 'eyJrZXlfcm90YXRpb24iOmZhbHNlLCJyZXNwb25zZV9mb3JtYXQiOiJvcmlnaW5hbCIsInVzZXJfaWQiOiJwYWxseWNvbiIsImRybV90eXBlIjoid2lkZXZpbmUiLCJzaXRlX2lkIjoiREVNTyIsImhhc2giOiIyYm0ybGJFTXc1VkZ4NUt3WDVUdFVhSXB1a3VQNmMyNkhNSWYxU09oY3lZPSIsImNpZCI6IlRlc3RSdW5uZXIiLCJwb2xpY3kiOiI5V3FJV2tkaHB4VkdLOFBTSVljbkpzY3Z1QTlzeGd1YkxzZCthanVcL2JvbVFaUGJxSSt4YWVZZlFvY2NrdnVFZkFhcWRXNWhYZ0pOZ2NTUzNmUzdvOE5zandzempNdXZ0KzBRekxrWlZWTm14MGtlZk9lMndDczJUSVRnZFU0QnZOOWFiaGQwclFrTUlybW9JZW9KSHFJZUhjUnZWZjZUMTRSbVRBREVwQ1k3UEhmUGZcL1ZGWVwvVmJYdXhYXC9XVHRWYXM0T1VwQ0RkNW0xc3BUWG04RFwvTUhGcGlieWZacERMRnBHeFArNkR4OThKSXhtTmFwWmRaRmlTTXB3aVpZRTIiLCJ0aW1lc3RhbXAiOiIyMDI0LTA0LTIzVDA1OjI3OjU3WiJ9';
                 	
-                // PallyCon License Request Token - playready
-                //request.headers['pallycon-customdata-v2'] = 'eyJrZXlfcm90YXRpb24iOmZhbHNlLCJyZXNwb25zZV9mb3JtYXQiOiJvcmlnaW5hbCIsInVzZXJfaWQiOiJwYWxseWNvbiIsImRybV90eXBlIjoid2lkZXZpbmUiLCJzaXRlX2lkIjoiREVNTyIsImhhc2giOiIyYm0ybGJFTXc1VkZ4NUt3WDVUdFVhSXB1a3VQNmMyNkhNSWYxU09oY3lZPSIsImNpZCI6IlRlc3RSdW5uZXIiLCJwb2xpY3kiOiI5V3FJV2tkaHB4VkdLOFBTSVljbkpzY3Z1QTlzeGd1YkxzZCthanVcL2JvbVFaUGJxSSt4YWVZZlFvY2NrdnVFZkFhcWRXNWhYZ0pOZ2NTUzNmUzdvOE5zandzempNdXZ0KzBRekxrWlZWTm14MGtlZk9lMndDczJUSVRnZFU0QnZOOWFiaGQwclFrTUlybW9JZW9KSHFJZUhjUnZWZjZUMTRSbVRBREVwQ1k3UEhmUGZcL1ZGWVwvVmJYdXhYXC9XVHRWYXM0T1VwQ0RkNW0xc3BUWG04RFwvTUhGcGlieWZacERMRnBHeFArNkR4OThKSXhtTmFwWmRaRmlTTXB3aVpZRTIiLCJ0aW1lc3RhbXAiOiIyMDI0LTA0LTIzVDA1OjI3OjU3WiJ9';
+                // License Request Token - playready
+                //request.headers['pallycon-customdata-v2'] = 'eyJrZXlfcm90YXRpb24iOmZhbHNlLCJyZXNwb25zZV9mb3JtYXQiOiJvcmlnaW5hbCIsInVzZXJfaWQiOiJwYWxseWNvbiIsImRybV90eXBlIjoicGxheXJlYWR5Iiwic2l0ZV9pZCI6IkRFTU8iLCJoYXNoIjoic0VRV212U2JXUmRDcTkrR3VSXC9rNlFcL0xzMnhZZ3YyenhmWkwrK3R4V1pNPSIsImNpZCI6IlRlc3RSdW5uZXIiLCJwb2xpY3kiOiI5V3FJV2tkaHB4VkdLOFBTSVljbkpzY3Z1QTlzeGd1YkxzZCthanVcL2JvbVFaUGJxSSt4YWVZZlFvY2NrdnVFZkFhcWRXNWhYZ0pOZ2NTUzNmUzdvOE5zandzempNdXZ0KzBRekxrWlZWTm14MGtlZk9lMndDczJUSVRnZFU0QnZOOWFiaGQwclFrTUlybW9JZW9KSHFJZUhjUnZWZjZUMTRSbVRBREVwQ1k3UEhmUGZcL1ZGWVwvVmJYdXhYXC9XVHRWYXM0T1VwQ0RkNW0xc3BUWG04RFwvTUhGcGlieWZacERMRnBHeFArNkR4OThKSXhtTmFwWmRaRmlTTXB3aVpZRTIiLCJ0aW1lc3RhbXAiOiIyMDI0LTA0LTI3VDAyOjMzOjMyWiJ9';
             }
         });
     }

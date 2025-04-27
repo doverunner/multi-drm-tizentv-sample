@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://pallycon.com/PallyConTizen-AVPlay" version="1.0.0" viewmodes="maximized">
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://doverunner.com/Multi-Drm-Tizen-AVPlay" version="1.0.0" viewmodes="maximized">
     <access origin="*" subdomains="true"></access>
-    <tizen:application id="2tRAg1qesN.PallyConTizenAVPlay" package="2tRAg1qesN" required_version="4.0"/>
+    <tizen:application id="2tRAg1qesN.MultiDrmTizenAVPlay" package="2tRAg1qesN" required_version="4.0"/>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
     <icon src="icon.png"/>
-    <name>PallyConTizen-AVPlay-Sample</name>
+    <name>Multi-Drm Tizen-AVPlay-Sample</name>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:privilege name="http://developer.samsung.com/privilege/drmplay"/>
     <tizen:privilege name="http://tizen.org/privilege/drmplay"/>
