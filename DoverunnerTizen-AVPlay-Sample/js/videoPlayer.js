@@ -49,7 +49,7 @@ function VideoPlayer(config) {
      * @type {Boolean}
      */
     var isUhd = true;
-
+    
     return {
         /**
          * Function to initialize the playback.
@@ -74,7 +74,7 @@ function VideoPlayer(config) {
                 onevent: function (eventType, eventData) {
                     log("event type: " + eventType + ", data: " + eventData);
                 },
-                ondrmevent: function (drmEvent, drmData) {
+                ondrmevent: async function (drmEvent, drmData) {
                     log("DRM callback: drmEvent " + drmEvent);
                  
                     if(drmData.name == "Challenge" && drmEvent == "PLAYREADY") {
@@ -86,7 +86,7 @@ function VideoPlayer(config) {
                     }
                     
                     if(drmData.name == "Challenge" && drmEvent == "WIDEVINE_CDM") {
-                        // request license data from license server (via HTTP POST)
+                    	
                         var message = atob(drmData.challenge); // The challenge data is base64 encoded type.   
 
                         var buf = new Uint8Array(message.length);
